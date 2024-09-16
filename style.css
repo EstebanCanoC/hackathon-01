@@ -1,0 +1,94 @@
+/* Aplicar la fuente "Roboto" a todo el documento */
+body {
+    font-family: 'Merriweather', sans-serif;
+  }
+
+  /* Estilos para la barra superior */
+  .top-bar {
+    background-color: #293440;
+    color: white;
+    padding: 12px 0;
+    font-size: 20px;
+  }
+
+  .top-bar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 15px;
+  }
+  /*Estilo de navbar*/
+   .navbar {
+    background-color: #ffffff00;
+  }
+
+  /* Estilos para la marca en el navbar */
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 28px;
+    color: #ffffff00; /* Color blanco para la marca en el navbar */
+  }
+
+  /* Espaciado en los elementos de la barra de navegación */
+  .navbar-nav .nav-item {
+    margin-right: 5px;
+  }
+
+  /* Estilos para el campo de búsqueda */
+  .form-inline .form-control {
+    width: 250px;
+  }
+
+  /* Estilos para los enlaces en la navbar */
+  .nav-link {
+    color: #000000e8;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  .nav-link:hover {
+    color: #55595c;
+    font-size: 25px;
+  }
+
+  /* Estilos para el botón de búsqueda */
+  .btn-outline-success {
+    color: #474747;
+    border-color: #e6e6e6;
+  }
+
+  .btn-outline-success:hover {
+    background-color: #ffffff00;
+    color: #ffffff00;
+  }
+
+  /* Iconos y botones de la parte derecha */
+  .navbar .fas {
+    margin-left: 5px;
+  }
+
+  /* Estilos para la barra de navegación */
+  .navbar {
+    background-color: #ffffff00;
+    border-bottom: none;
+  }
+
+  .navbar.navbar-expand-lg {
+    background-color: transparent;
+  }
+
+  /* Estilos para mover la barra de búsqueda a la derecha */
+  .navbar-nav {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .navbar-nav .nav-item {
+    margin-left: auto;
+  }
+
+  .navbar-nav .nav-item:last-child {
+    margin-right: 20px;
+  }
+
+ 
