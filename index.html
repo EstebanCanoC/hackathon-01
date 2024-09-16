@@ -1,65 +1,490 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <!-- Google Fonts: Merriweather -->
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
 
     <!-- Vincular archivo CSS -->
-    <link rel="stylesheet" href="style.css">
-
-    <style>
-        body {
-            font-family: 'Merriweather', serif;
-        }
-    </style>
-</head>
-<body>
-
-  <!-- Barra superior -->
-  <div class="top-bar text-center">
-    <span>30% off en BLACKFRIDAY</span>
-    <a href="#" class="float-right mr-3">Soporte y ayuda</a>
-  </div>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <img src="./imgs/golflux.png" width="90" height="90" class="d-inline-block align-top" alt="Logo">
-    <a class="navbar-brand" href="#">GOLFLUX</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Tienda</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Nosotros</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0 ml-auto">
-        <input class="form-control mr-sm-2" type="search" placeholder="¿Buscas algo en especial?" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-      </form>
-      <a href="#" class="nav-link"><i class="bi bi-bag"></i></a>
-      <a href="#" class="nav-link">Ingresar</a>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Barra superior -->
+    <div class="top-bar text-center">
+      <span>30% off en BLACKFRIDAY</span>
+      <a href="#" class="float-right mr-3">Soporte y ayuda</a>
     </div>
-  </nav>
 
-  <!-- Bootstrap JS and dependencies -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  <script src="./script.js"></script>
-</body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <img
+        src="./pictures/golflux.png"
+        width="70"
+        height="73"
+        class="d-inline-block align-top"
+        alt="Logo"
+      />
+      <a class="navbar-brand" href="#">GOLFLUX</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Tienda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Nosotros</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0 ml-auto">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="¿Buscas algo en especial?"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Buscar
+          </button>
+        </form>
+
+        <!-- Ícono del carrito y la lista del carrito -->
+        <a href="#" class="nav-link" id="cart-icon">
+          <i class="bi bi-bag"></i>
+        </a>
+        <div id="cart-dropdown" class="cart-dropdown hidden">
+          <ul>
+            <li>Producto 1</li>
+            <li>Producto 2</li>
+            <li>Producto 3</li>
+          </ul>
+        </div>
+
+        <a href="#" class="nav-link">Ingresar</a>
+      </div>
+    </nav>
+
+    <!-- Slider -->
+    <div class="slider-container">
+      <div class="slider">
+        <div class="slides">
+          <div class="slide">
+            <img src="pictures/slider1.png" alt="Golf 1" />
+          </div>
+          <div class="slide">
+            <img src="pictures/slider2.png" alt="Golf 2" />
+          </div>
+          <div class="slide">
+            <img src="pictures/slider3.png" alt="Golf 3" />
+          </div>
+          <div class="slide">
+            <img src="pictures/slider4.png" alt="Golf 4" />
+          </div>
+          <div class="slide">
+            <img src="pictures/slider5.png" alt="Golf 5" />
+          </div>
+        </div>
+        <div class="nav-buttons">
+          <button class="nav-button" onclick="prevSlide()">&#10094;</button>
+          <button class="nav-button" onclick="nextSlide()">&#10095;</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cards  - productos -->
+    <section>
+      <h2>Productos con descuento</h2>
+      <!-- Contenedor del carrito -->
+      <div id="cart">
+        <h3>Carrito de Compras</h3>
+        <div id="cart-summary">
+          <p>Total de artículos: <span id="item-count">0</span></p>
+          <p>Total de compra: <span id="total-price">$0</span></p>
+          <button id="buy-cart">Comprar</button>
+          <button id="empty-cart">Vaciar carrito</button>
+        </div>
+        <div id="cart-items"></div>
+      </div>
+      <!-- Tarjetas de productos -->
+      <div class="card estilo-c">
+        <a href="#">
+          <div class="img-container">
+            <img
+              src="pictures/producto1.jpg"
+              alt="XL para mujer Top Flite 2024"
+            />
+            <span class="promo">15% de descuento</span>
+          </div>
+        </a>
+        <div class="info-container">
+          <h3>XL para mujer Top Flite 2024</h3>
+          <strong>$919.920</strong>
+          <a href="#" class="add-cart">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-cart-plus-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0"
+              />
+            </svg>
+            Añadir al carrito
+          </a>
+        </div>
+      </div>
+      <div class="card estilo-c">
+        <a href="#">
+          <div class="img-container">
+            <img
+              src="pictures/producto2.jpg"
+              alt="Juego completo de 13 piezas Top Flite 2024 XL"
+            />
+            <span class="promo">32% de descuento</span>
+          </div>
+        </a>
+        <div class="info-container">
+          <h3>Juego completo de 13 piezas Top Flite 2024 XL</h3>
+          <strong>$1.119.960</strong>
+          <a href="#" class="add-cart">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-cart-plus-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0"
+              />
+            </svg>
+            Añadir al carrito
+          </a>
+        </div>
+      </div>
+      <div class="card estilo-c">
+        <a href="#">
+          <div class="img-container">
+            <img
+              src="pictures/producto3.jpg"
+              alt="Controlador TaylorMade SIM2 Max"
+            />
+            <span class="promo">19% de descuento</span>
+          </div>
+        </a>
+        <div class="info-container">
+          <h3>Controlador TaylorMade SIM2 Max</h3>
+          <strong>$1.199.960</strong>
+          <a href="#" class="add-cart">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-cart-plus-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0"
+              />
+            </svg>
+            Añadir al carrito
+          </a>
+        </div>
+      </div>
+      <div class="card estilo-c">
+        <a href="#">
+          <div class="img-container">
+            <img
+              src="pictures/producto4.jpg"
+              alt="Cuña Titleist Vokey Design SM9"
+            />
+            <span class="promo">25% de descuento</span>
+          </div>
+        </a>
+        <div class="info-container">
+          <h3>Cuña Titleist Vokey Design SM9</h3>
+          <strong>$859.350</strong>
+          <a href="#" class="add-cart">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-cart-plus-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0"
+              />
+            </svg>
+            Añadir al carrito
+          </a>
+        </div>
+      </div>
+      <div class="card estilo-c">
+        <a href="#">
+          <div class="img-container">
+            <img src="pictures/producto5.jpg" alt="Controlador PING G430 MAX" />
+            <span class="promo">10% de descuento</span>
+          </div>
+        </a>
+        <div class="info-container">
+          <h3>Controlador PING G430 MAX</h3>
+          <strong>$745.497</strong>
+          <a href="#" class="add-cart">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-cart-plus-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0"
+              />
+            </svg>
+            Añadir al carrito
+          </a>
+        </div>
+      </div>
+      <div class="card estilo-c">
+        <a href="#">
+          <div class="img-container">
+            <img
+              src="pictures/producto6.jpg"
+              alt="Madera de calle PING G430 MAX"
+            />
+            <span class="promo">15% de descuento</span>
+          </div>
+        </a>
+        <div class="info-container">
+          <h3>Madera de calle PING G430 MAX</h3>
+          <strong>$1.076.000</strong>
+          <a href="#" class="add-cart">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-cart-plus-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0"
+              />
+            </svg>
+            Añadir al carrito
+          </a>
+        </div>
+      </div>
+      <div class="card estilo-c">
+        <a href="#">
+          <div class="img-container">
+            <img
+              src="pictures/producto7.jpg"
+              alt="Híbrido de rescate TaylorMade SIM2 Max"
+            />
+            <span class="promo">35% de descuento</span>
+          </div>
+        </a>
+        <div class="info-container">
+          <h3>Híbrido de rescate TaylorMade SIM2 Max</h3>
+          <strong>$719.960</strong>
+          <a href="#" class="add-cart">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-cart-plus-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0"
+              />
+            </svg>
+            Añadir al carrito
+          </a>
+        </div>
+      </div>
+      <div class="card estilo-c">
+        <a href="#">
+          <div class="img-container">
+            <img src="pictures/producto8.jpg" alt="Cuña Callaway JAWS MD5" />
+            <span class="promo">10% de descuento</span>
+          </div>
+        </a>
+        <div class="info-container">
+          <h3>Cuña Callaway JAWS MD5</h3>
+          <strong>$519.960</strong>
+          <a href="#" class="add-cart">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-cart-plus-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0"
+              />
+            </svg>
+            Añadir al carrito
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promociones -->
+    <div class="promociones container py-5">
+      <h2 class="text-center mb-4">Ofertas Especiales</h2>
+      <div class="row">
+        <!-- Primera tarjeta -->
+        <div class="col-md-12 col-md-6 col-lg-5">
+          <div class="card align-self-center">
+            <img
+              src="https://images.unsplash.com/photo-1592459777315-00ab1374a953?q=80&w=2612&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              class="card-img-top"
+              alt="Promotion picture"
+            />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">
+                Hasta 50% de descuento en las mejores marcas
+              </h5>
+              <p class="card-text flex-grow-1">
+                Fin de la temporada verano. Grandes descuentos en marcas
+                seleccionadas. *Aplica solo en la página web.
+              </p>
+              <a href="#" class="btn btn-primary mt-auto align-self-center"
+                >Ir a Descuentos</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Segunda tarjeta -->
+        <div class="col-md-12 col-md-6 col-lg-5">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="https://images.unsplash.com/photo-1622819313420-3b58498aad9b?q=80&w=2515&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              class="card-img-top"
+              alt="Promotion picture"
+            />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">
+                Hasta 50% de descuento en las mejores marcas
+              </h5>
+              <p class="card-text flex-grow-1">
+                Fin de la temporada verano. Grandes descuentos en marcas
+                seleccionadas. *Aplica solo en la página web.
+              </p>
+              <a href="#" class="btn btn-primary mt-auto align-self-center"
+                >Ir a Descuentos</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="categories">
+          <h3>Categorías</h3>
+          <ul>
+            <li>Palos</li>
+            <li>Talegas</li>
+            <li>Zapatos</li>
+            <li>Bolas</li>
+            <li>Accesorios</li>
+            <li>Ropa</li>
+            <li>Por Marca</li>
+            <li>Nuestra empresa</li>
+          </ul>
+        </div>
+
+        <div class="info">
+          <h3>Información</h3>
+          <ul>
+            <li>Entrega de sus productos</li>
+            <li>Privacidad de sus datos</li>
+            <li>Condiciones de venta</li>
+            <li>Sobre nuestro sitio web</li>
+            <li>Formas de Pago</li>
+            <li>Contacte con nosotros</li>
+            <li>Mapa del sitio</li>
+            <li>Tiendas</li>
+            <li>Su cuenta</li>
+            <li>Seguimiento del pedido</li>
+            <li>Iniciar sesión</li>
+            <li>Crear una cuenta</li>
+            <li>Información de la tienda</li>
+          </ul>
+        </div>
+
+        <div class="contact">
+          <h3>Contacto</h3>
+          <p>
+            Tienda de artículos de Golf:
+            <a href="http://www.golflux.com" target="_blank">www.golflux.com</a>
+          </p>
+          <p>Colombia, Bogotá</p>
+          <p>Comuníquese: Escribir al WhatsApp 300 000 0000</p>
+          <p>
+            Envíenos un mensaje de correo electrónico:
+            <a href="mailto:info@golflux.com">info@golflux.com</a>
+          </p>
+          <p>© 2024 - Software Ecommerce desarrollado por GenerationJava6™</p>
+        </div>
+
+        <div class="subscribete">
+          <h3>Suscríbete</h3>
+          <form id="subscribete-form">
+            <input type="email" placeholder="Tu correo electrónico" required />
+            <button type="submit">Suscribirme</button>
+          </form>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./script.js"></script> 
+    <script src="./carrito.js"></script>
+  </body>
 </html>

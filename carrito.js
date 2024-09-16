@@ -1,54 +1,3 @@
-// Carrito list              --------------------------------------
-document.getElementById("cart-icon").addEventListener("click", function (e) {
-  e.preventDefault(); // Evita el comportamiento por defecto del enlace
-  const cartDropdown = document.getElementById("cart-dropdown");
-  cartDropdown.classList.toggle("visible");
-  cartDropdown.classList.toggle("hidden");
-});
-
-// Slider                     -------------------------------------
-let currentSlide = 0;
-let slideInterval;
-
-function showSlide(index) {
-  const slides = document.querySelector(".slides");
-  const totalSlides = document.querySelectorAll(".slide").length;
-  if (index >= totalSlides) {
-    currentSlide = 0;
-  } else if (index < 0) {
-    currentSlide = totalSlides - 1;
-  } else {
-    currentSlide = index;
-  }
-  slides.style.transform = `translateX(-${currentSlide * 100}%)`;
-}
-
-function nextSlide() {
-  showSlide(currentSlide + 1);
-}
-
-function prevSlide() {
-  showSlide(currentSlide - 1);
-}
-
-// Función para iniciar el slider automático
-function startSlideShow() {
-  slideInterval = setInterval(nextSlide, 5000); // Cambia cada 5 segundos
-}
-
-// Función para detener el slider automático
-function stopSlideShow() {
-  clearInterval(slideInterval);
-}
-
-// Iniciar el slider automático al cargar la página
-window.onload = startSlideShow;
-
-// Opción de detener el slider al pasar el mouse sobre él
-const slidesContainer = document.querySelector(".slides");
-slidesContainer.addEventListener("mouseenter", stopSlideShow);
-slidesContainer.addEventListener("mouseleave", startSlideShow);
-
 document.addEventListener('DOMContentLoaded', () => {
     const cart = document.getElementById('cart');
     const cartItemsContainer = document.getElementById('cart-items');
@@ -116,15 +65,3 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCart();
     });
 });
-
-// Js para el footer
-
-document
-  .getElementById("subscribete-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-    // Lógica para manejar la suscripción
-    const email = this.querySelector('input[type="email"]').value;
-    console.log("Email suscrito:", email);
-    // Lógica para enviar el email al servidor
-  });
